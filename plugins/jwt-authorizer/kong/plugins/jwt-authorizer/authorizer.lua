@@ -5,7 +5,7 @@ local utils = require "kong.plugins.jwt-authorizer.utils"
 
 function _M.run(conf)
 
-   -- Validate token existence
+   -- Verify token existence
    if not req_get_headers()["Authorization"] then
       return kong.response.exit(401)
    end
